@@ -1,6 +1,18 @@
 import { useEffect, useState } from "react";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineEnvelope } from "react-icons/hi2";
+import heroImage from "./hero-06.png";
+import interiorImage from "./residential-interior.png";
+import gallery03 from "./gallery-03.png";
+import gallery09 from "./gallery-09.png";
+import gallery12 from "./gallery-12.png";
+import gallery13 from "./gallery-13.png";
+import gallery17 from "./gallery-17.png";
+import gallery19 from "./gallery-19.png";
+import gallery24 from "./gallery-24.png";
+import gallery30 from "./gallery-30.png";
+import gallery34 from "./gallery-34.png";
+import gallery40 from "./gallery-40.png";
 
 const services = [
   ["01", "Architecture", "Thoughtful, functional designs for residential and commercial spaces."],
@@ -12,8 +24,8 @@ const testimonials = [
   ["Excellent attention to detail and a deep understanding of what modern living needs.", "Residential Interior", "Ikoyi, Lagos"],
   ["A reliable partner from concept to completion. The results exceeded our expectations.", "Commercial Development", "Victoria Island, Lagos"],
 ];
-const galleryImages = ["03", "09", "19", "40", "13", "24", "34", "17", "12", "30"].map((number, index) => ({
-  src: `/assets/enhanced/gallery-${number}.png`,
+const galleryImages = [gallery03, gallery09, gallery19, gallery40, gallery13, gallery24, gallery34, gallery17, gallery12, gallery30].map((src, index) => ({
+  src,
   alt: `Photorealistic Jibsarc Design architectural project view ${index + 1}`,
 }));
 
@@ -72,14 +84,14 @@ export function App() {
             <div className="hero-actions"><a className="button button-primary" href="#contact">Start a project</a><a className="button button-secondary" href="#services">Our services</a></div>
             <div className="hero-disciplines"><span>Residential<br />homes</span><span>Commercial<br />spaces</span><span>Interior<br />solutions</span></div>
           </div>
-          <figure className="hero-image image-reveal" data-reveal data-visible="true"><img src="/assets/enhanced/hero-06.png" alt="Photorealistic front elevation of a contemporary Jibsarc residence" /><figcaption>Good design<br />builds better lives</figcaption></figure>
+          <figure className="hero-image image-reveal" data-reveal data-visible="true"><img src={heroImage} alt="Photorealistic front elevation of a contemporary Jibsarc residence" /><figcaption>Good design<br />builds better lives</figcaption></figure>
         </section>
 
         <section className="services section" id="services"><p className="section-kicker" data-reveal>Our services</p><div className="service-list">{services.map(([number, title, text]) => <article key={title} data-reveal><span>{number}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</div></section>
 
         <section className="studio section" id="studio">
           <div className="studio-copy" data-reveal><p className="section-kicker">About Jibsarc Design</p><h2>Design that<br />lives with you.</h2><p>We are an architectural design studio based in Lagos, Nigeria, focused on creating functional, inspiring and enduring spaces. From bespoke homes to commercial developments, we combine creativity, technical expertise and a deep understanding of how people live, work and connect.</p><a className="button button-primary" href="#services">Our approach</a></div>
-          <figure className="studio-image image-reveal" data-reveal><img src="/assets/residential-interior.png" alt="Contemporary residential interior by Jibsarc Design" /><figcaption>People<br />Spaces<br />Possibilities</figcaption></figure>
+          <figure className="studio-image image-reveal" data-reveal><img src={interiorImage} alt="Contemporary residential interior by Jibsarc Design" /><figcaption>People<br />Spaces<br />Possibilities</figcaption></figure>
         </section>
 
         <section className="gallery-section section" id="gallery" aria-labelledby="gallery-title">
